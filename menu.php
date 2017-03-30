@@ -75,7 +75,7 @@ function tree2(&$menu, $parentId = 0) {
 			if (!$link['parent_id']) {
 				$inner .= "<li id=\"{$link['id']}\" data-pid=\"{$link['parent_id']}\">";
 				$inner .= $link['title'];
-				$inner .= tree($menu, $link['id']);
+				$inner .= tree2($menu, $link['id']);
 				$inner .= "</li>";
 			}
 		}
@@ -92,7 +92,7 @@ function tree2(&$menu, $parentId = 0) {
 			if ($link['parent_id'] == $parentId) {
 				$inner .= "<li id=\"{$link['id']}\" data-pid=\"{$link['parent_id']}\">";
 				$inner .= $link['title'];
-				$inner .= tree($menu, $link['id']);
+				$inner .= tree2($menu, $link['id']);
 				$inner .= "</li>";
 			}
 		}
