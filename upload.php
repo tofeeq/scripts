@@ -12,7 +12,7 @@ function get_unique_file_name($path, $filename) {
 }
 
 function upload_file($path, $fileInput) {
-    if ($_FILES[$fileInput]['error']) {
+    if ($_FILES['file']['error'] !== UPLOAD_ERR_OK) {
         return "Error: " . $_FILES[$fileInput]['error'];
     }
     $filename = $path . 
